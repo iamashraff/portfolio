@@ -34,10 +34,15 @@ function MainContent() {
         <div class="relative z-10 flex flex-col items-center justify-center">
           <div class="flex flex-col items-center justify-center">
             <img
-              className="animate__animated animate__fadeIn mb-5 h-60 w-60 rounded-full object-cover object-center shadow-xl"
+              className={`mb-5 ${
+                isSmallScreen
+                  ? "animate__animated animate__pulse h-40 w-40"
+                  : "animate__animated animate__fadeIn  h-60 w-60"
+              }   rounded-full object-cover object-center shadow-xl`}
               src={myavatar}
               alt="nature image"
             />
+
             <Typography
               className="typing-effect animate__animated animate__fadeIn animate__slower text-shadow-lg"
               style={{

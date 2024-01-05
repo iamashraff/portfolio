@@ -104,7 +104,7 @@ function Skills() {
                 <img
                   src={skill.image}
                   // style={{ height: "70px" }}
-                  className="mx-auto mb-2 h-15"
+                  className={`mx-auto mb-2 ${isSmallScreen ? "h-15" : "h-21"}`}
                   alt={skill.title}
                 />
                 <p className="flex-grow">{skill.title}</p>

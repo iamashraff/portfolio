@@ -9,7 +9,14 @@ import {
   Typography,
   Avatar,
   Tooltip,
+  Card,
+  CardHeader,
+  CardBody,
+  Button,
 } from "@material-tailwind/react";
+
+import uniklimage from "../../media/unikl_image.jpg";
+import unikllogo from "../../media/unikl_logo.png";
 
 import { DrawerContext } from "../../App";
 
@@ -24,7 +31,10 @@ function AboutMe() {
 
   return (
     <>
-      <div class="relative flex flex-col  items-center justify-center bg-white dark:bg-black transition-bg">
+      <div
+        class="relative flex flex-col  items-center justify-center"
+        style={{ backgroundColor: "#F7F9FB" }}
+      >
         <Typography
           style={{
             ...fontStyle,
@@ -34,15 +44,57 @@ function AboutMe() {
           }}
           color="gray"
         >
-          About <label style={{ color: "#940808" }}>Me</label>
+          My <label style={{ color: "#940808" }}>Education</label>
           &nbsp;
         </Typography>
 
-        <div
-          style={{ marginLeft: "14px", marginBottom: "80px" }}
-          className="mt-8 "
-        >
-          <Timeline>
+        <div style={{ marginBottom: "80px" }} className="mt-8 ">
+          <Card className="w-full max-w-[68rem] flex-row">
+            <CardHeader
+              shadow={false}
+              floated={false}
+              className="m-0 w-2/5 shrink-0 rounded-r-none"
+            >
+              <img
+                src={uniklimage}
+                alt="card-image"
+                className="h-full w-full object-cover"
+              />
+            </CardHeader>
+            <CardBody className="flex items-center justify-center">
+              <div className="text-center">
+                <img
+                  src={unikllogo}
+                  alt="card-image"
+                  className="h-25 mx-auto"
+                />{" "}
+                <Typography
+                  variant="h4"
+                  color="blue-gray"
+                  className="mb-2 mt-5"
+                  style={fontStyle}
+                >
+                  Universiti Kuala Lumpur
+                </Typography>
+                <Typography
+                  color="gray"
+                  className="mb-8 font-normal"
+                  style={fontStyle}
+                >
+                  Malaysian Institute of Information Technology Bachelor of
+                  Information Technology (Hons.) in Software Engineering
+                  <br></br>
+                  <br></br>
+                  <b>CGPA : 3.93/4.00</b>
+                  <br></br>
+                  <br></br>
+                  Dean List All Semesters
+                </Typography>
+              </div>
+            </CardBody>
+          </Card>
+
+          {/* <Timeline>
             <TimelineItem>
               <TimelineConnector />
               <TimelineHeader>
@@ -120,7 +172,7 @@ function AboutMe() {
                 </Typography>
               </TimelineBody>
             </TimelineItem>
-          </Timeline>
+          </Timeline> */}
         </div>
       </div>
     </>

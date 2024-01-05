@@ -1,6 +1,7 @@
 import React from "react";
 import { Typography } from "@material-tailwind/react";
 import { ProjectsCard } from "./projects-card";
+import { DrawerContext } from "../../App";
 import "./projects.css";
 import reactlogo from "./../../media/react_logo.png";
 import expresslogo from "./../../media/expressjs_logo.png";
@@ -29,6 +30,12 @@ import ezcproject from "./../../media/projects/EZC.jpg";
 import mysimsproject from "./../../media/projects/MYSIMS.png";
 
 function Projects() {
+  const { screenWidth, setScreenWidth } = React.useContext(DrawerContext);
+
+  const isSmallScreen = screenWidth < 560;
+  const isMediumScreen = screenWidth >= 560 && screenWidth < 850;
+  const isLargeScreen = screenWidth >= 850;
+
   const fontStyle = { fontFamily: "Poppins" };
 
   const listProjects = [
@@ -116,8 +123,8 @@ function Projects() {
   return (
     <>
       <div
-        style={{ backgroundColor: "#F7F7F7" }}
-        className="projects centered-content flex flex-col items-center"
+        style={{ backgroundColor: "#F7F9FB" }}
+        className={`centered-content `}
       >
         <Typography
           style={{
@@ -125,36 +132,18 @@ function Projects() {
             fontSize: "30px",
             fontWeight: "bold",
             marginTop: "80px",
+            marginBottom: "20px",
           }}
           color="gray"
         >
           My <label style={{ color: "#940808" }}>Projects</label>
           &nbsp;
         </Typography>
-        <div className="mt-10 grid grid-cols-3 gap-8">
-          <div>
-            <ProjectsCard data={listProjects[0]} />
-          </div>
-          <div>
-            <ProjectsCard data={listProjects[1]} />
-          </div>
-          <div>
-            <ProjectsCard data={listProjects[2]} />
-          </div>
-        </div>
-        <div
-          style={{ marginBottom: "100px" }}
-          className="mt-10 grid grid-cols-3 gap-8"
-        >
-          <div>
-            <ProjectsCard data={listProjects[3]} />
-          </div>
-          <div>
-            <ProjectsCard data={listProjects[4]} />
-          </div>
-          <div>
-            <ProjectsCard data={listProjects[5]} />
-          </div>
+
+        <div className={`flex flex-wrap gap-5  items-center justify-center`}>
+          {listProjects.map((project, index) => (
+            <ProjectsCard data={project} />
+          ))}
         </div>
       </div>
     </>
