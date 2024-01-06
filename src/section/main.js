@@ -4,6 +4,7 @@ import MainContent from "./content/main-content";
 import AboutMe from "./content/about-me";
 import Skills from "./content/skills";
 import Projects from "./content/projects";
+import Certifications from "./content/certifications";
 import "./main.css";
 
 export function Main() {
@@ -26,6 +27,9 @@ export function Main() {
       </section>
       <section>
         <Projects />
+      </section>
+      <section>
+        <Certifications />
       </section>
     </div>
   );

@@ -4,6 +4,8 @@ import { DrawerContext } from "../App";
 
 function Header() {
   const [openNav, setOpenNav] = React.useState(false);
+  const [scrollPosition, setScrollPosition] = React.useState(0);
+  const [scrolling, setScrolling] = React.useState(false);
 
   const { open, setOpen } = React.useContext(DrawerContext);
 
@@ -24,6 +26,27 @@ function Header() {
       () => window.innerWidth >= 960 && setOpenNav(false)
     );
   }, []);
+
+  const handleScroll = () => {
+    console.log(window.scrollY);
+    setScrollPosition(window.scrollY);
+    if (window.scrollY > 0) {
+      setScrolling(true);
+    } else {
+      setScrolling(false);
+    }
+  };
+
+  React.useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
 
   return (
     <>
@@ -100,6 +123,16 @@ function Header() {
           </div>
         </div>
       </nav>
+
+      <button
+        onClick={scrollToTop}
+        // style={{ backgroundColor: "yellow" }}
+        className={`animate__animated ${
+          scrollPosition > 1 ? "animate__fadeInUpBig" : "animate__fadeOutDown"
+        } fixed bottom-10 right-10 bg-blue-800 text-white py-2 px-4 rounded-full cursor-pointer `}
+      >
+        <i class="fa fa-arrow-up" aria-hidden="true"></i>
+      </button>
     </>
   );
 }

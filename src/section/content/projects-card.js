@@ -55,7 +55,7 @@ export function ProjectsCard(data) {
         </div>
       </CardHeader>
       <CardBody
-        style={{ backgroundColor: "#F7F7F7", height: "100px" }}
+        style={{ backgroundColor: "#FFFFFF", height: "100px" }}
         className="text-center"
       >
         <Typography
@@ -66,14 +66,16 @@ export function ProjectsCard(data) {
         </Typography>
       </CardBody>
       <CardFooter
-        style={{ backgroundColor: "#F7F7F7" }}
+        style={{ backgroundColor: "#FFFFFF" }}
         className="flex items-center "
       >
         {data.data.tags.map((tag, index) => (
           <div style={{ marginLeft: "7px" }}>
             <Tooltip content={tag.name}>
               <img
-                style={{ height: isSmallScreen ? "25px" : "28px" }}
+                style={{
+                  height: "25px",
+                }}
                 src={tag.logo}
               />
             </Tooltip>
@@ -85,7 +87,9 @@ export function ProjectsCard(data) {
             <Typography
               style={{ fontFamily: "Poppins" }}
               as="a"
-              href="#instagram"
+              href={data.data.link}
+              target="_blank"
+              rel="noopener noreferrer"
             >
               <i style={{ fontSize: "18px" }} className="fa fa-github" />
               &nbsp;View

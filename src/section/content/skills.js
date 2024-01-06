@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { Typography } from "@material-tailwind/react";
 import "./skills.css";
+import Tilt from "react-parallax-tilt";
 import reactlogo from "./../../media/react_logo.png";
 import expresslogo from "./../../media/expressjs_logo.png";
 import javalogo from "./../../media/java_logo.png";
@@ -88,7 +89,7 @@ function Skills() {
             }}
             color="white"
           >
-            My <label style={{ color: "#940808" }}>Skills</label>
+            My <label style={{ color: "#FC0E49" }}>Skills</label>
             &nbsp;
           </Typography>
           <div className={`flex flex-wrap`}>
@@ -101,13 +102,24 @@ function Skills() {
                   isLargeScreen && "w-1/5"
                 } p-4 text-center flex flex-col items-center`}
               >
-                <img
-                  src={skill.image}
-                  // style={{ height: "70px" }}
-                  className={`mx-auto mb-2 ${isSmallScreen ? "h-15" : "h-21"}`}
-                  alt={skill.title}
-                />
-                <p className="flex-grow">{skill.title}</p>
+                <Tilt
+                  glareEnable={true}
+                  glareMaxOpacity={0.8}
+                  glareColor="#ffffff"
+                  glarePosition="bottom"
+                  glareBorderRadius="20px"
+                >
+                  <img
+                    src={skill.image}
+                    // style={{ height: "70px" }}
+                    className={`mx-auto mb-2 ${
+                      isSmallScreen ? "h-15" : "h-21"
+                    }`}
+                    alt={skill.title}
+                  />
+
+                  <p className="flex-grow">{skill.title}</p>
+                </Tilt>
               </div>
             ))}
           </div>

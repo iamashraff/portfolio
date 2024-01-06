@@ -12,6 +12,7 @@
     "lottie-web": "^5.12.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-parallax-tilt": "^1.7.181",
     "react-scripts": "5.0.1",
     "web-vitals": "^2.1.4"
   },

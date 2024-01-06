@@ -122,25 +122,26 @@ function Projects() {
 
   return (
     <>
-      <div
-        style={{ backgroundColor: "#F7F9FB" }}
-        className={`centered-content `}
-      >
-        <Typography
-          style={{
-            ...fontStyle,
-            fontSize: "30px",
-            fontWeight: "bold",
-            marginTop: "80px",
-            marginBottom: "20px",
-          }}
-          color="gray"
-        >
-          My <label style={{ color: "#940808" }}>Projects</label>
-          &nbsp;
-        </Typography>
+      <div style={{ backgroundColor: "#F7F9FB" }} className="content-project">
+        <div className={`text-center`}>
+          <Typography
+            style={{
+              ...fontStyle,
+              fontSize: "30px",
+              fontWeight: "bold",
+              marginTop: "80px",
+              marginBottom: "50px",
+            }}
+            color="gray"
+          >
+            My <label style={{ color: "#FC0E49" }}>Projects</label>
+            &nbsp;
+          </Typography>
+        </div>
 
-        <div className={`flex flex-wrap gap-5  items-center justify-center`}>
+        <div
+          className={`flex flex-wrap gap-5  items-center justify-center mb-30`}
+        >
           {listProjects.map((project, index) => (
             <ProjectsCard data={project} />
           ))}

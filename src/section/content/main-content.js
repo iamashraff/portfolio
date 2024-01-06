@@ -10,6 +10,7 @@ import {
 import scroll from "./../../media/scroll_lottie.json";
 import "./main-content.css";
 import myavatar from "../../media/avatar.svg";
+import Tilt from "react-parallax-tilt";
 import { DrawerContext } from "../../App";
 
 const fontStyle = { fontFamily: "Poppins" };
@@ -23,25 +24,25 @@ function MainContent() {
 
   return (
     <>
-      <div
-        style={{ backgroundColor: "#F7F7F7" }}
-        class="relative flex flex-col h-[100vh] items-center justify-center bg-white dark:bg-black transition-bg"
-      >
-        <div class="absolute inset-0 overflow-hidden">
-          <div class="jumbo absolute -inset-[10px] opacity-50"></div>
-        </div>
-
+      <div className="context">
         <div class="relative z-10 flex flex-col items-center justify-center">
-          <div class="flex flex-col items-center justify-center">
-            <img
-              className={`mb-5 ${
-                isSmallScreen
-                  ? "animate__animated animate__pulse h-40 w-40"
-                  : "animate__animated animate__fadeIn  h-60 w-60"
-              }   rounded-full object-cover object-center shadow-xl`}
-              src={myavatar}
-              alt="nature image"
-            />
+          <div class="avatarimg flex flex-col items-center justify-center">
+            <Tilt
+              glareEnable={true}
+              glareMaxOpacity={0.9}
+              glareColor="lightblue"
+              glarePosition="all"
+            >
+              <img
+                className={`mb-5 ${
+                  isSmallScreen
+                    ? "animate__animated animate__pulse h-40 w-40"
+                    : "animate__animated animate__fadeIn  h-60 w-60"
+                }   rounded-full object-cover object-center shadow-xl`}
+                src={myavatar}
+                alt="nature image"
+              />
+            </Tilt>
 
             <Typography
               className="typing-effect animate__animated animate__fadeIn animate__slower text-shadow-lg"
@@ -50,18 +51,19 @@ function MainContent() {
                 fontSize: `${isSmallScreen ? "40px" : "45px"}`,
                 fontWeight: "bold",
               }}
-              color="gray"
             >
-              Hi, I am <label style={{ color: "#940808" }}>Ashraff !</label>
+              <label style={{ color: "#FFFFFF" }}>Hi, I am </label>
+              <label style={{ color: "#FC0E49" }}>Ashraff !</label>
               &nbsp;
             </Typography>
+
             <Typography
               className="animate__animated animate__fadeIn animate__slower"
               style={{
                 ...fontStyle,
                 fontSize: `${isSmallScreen ? "18px" : "22px"}`,
               }}
-              color="gray"
+              color="white"
             >
               Full Stack Software Engineer
             </Typography>
@@ -77,9 +79,10 @@ function MainContent() {
                   variant="outlined"
                   className="rounded-full"
                   size="lg"
+                  color="white"
                 >
                   <i
-                    style={{ fontSize: "25px" }}
+                    style={{ fontSize: "25px", color: "white" }}
                     class="fa fa-linkedin-square"
                     aria-hidden="true"
                   ></i>
@@ -93,9 +96,10 @@ function MainContent() {
                   variant="outlined"
                   className="rounded-full"
                   size="lg"
+                  color="white"
                 >
                   <i
-                    style={{ fontSize: "25px" }}
+                    style={{ fontSize: "25px", color: "white" }}
                     class="fa fa-github"
                     aria-hidden="true"
                   ></i>
@@ -106,13 +110,33 @@ function MainContent() {
 
           <Lottie
             className="animate__animated animate__fadeInDown animate__slower animate__delay-2s"
-            style={{ marginTop: "50px" }}
+            style={{
+              marginTop: "50px",
+              opacity: 0.3,
+              width: "100px",
+              height: "100px",
+            }}
             animationData={scroll}
             loop={true}
             autoplay={true}
-            speed={1.5}
+            speed={2}
           />
         </div>
+      </div>
+
+      <div class="area">
+        <ul class="circles">
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
       </div>
     </>
   );

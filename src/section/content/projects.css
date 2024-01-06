@@ -1,8 +1,6 @@
-.centered-content {
-  text-align: center;
-  z-index: 1; /* Ensure the centered content is above the stars */
-  color: white; /* Adjust the color as needed */
-  position: absolute;
+.content-project {
+  overflow: hidden;
+  position: relative;
 }
 
 /* Shine */
