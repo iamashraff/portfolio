@@ -14,6 +14,7 @@ import ibmtechsupport from "../../media/certifications/ibmtechsupport.png";
 import ibmcloud from "../../media/certifications/ibmcloud.png";
 import orcaledbfoundation from "../../media/certifications/oracledbfoundation.png";
 import intelcloud from "../../media/certifications/intelcloud.png";
+import credlylogo from "../../media/certifications/credly.png";
 import Tilt from "react-parallax-tilt";
 
 const fontStyle = { fontFamily: "Poppins" };
@@ -84,11 +85,12 @@ function Certifications() {
           value: "#252525",
         },
       },
+      fullScreen: { enable: false },
       fpsLimit: 120,
       interactivity: {
         events: {
           onClick: {
-            enable: true,
+            enable: false,
             mode: "push",
           },
           onHover: {
@@ -179,9 +181,7 @@ function Certifications() {
           </Typography>
         </div>
         <div
-          className={`flex flex-wrap mb-10 ${
-            isSmallScreen ? "" : "mr-30 ml-30"
-          } `}
+          className={`flex flex-wrap  ${isSmallScreen ? "" : "mr-30 ml-30"} `}
           style={{ position: "relative", zIndex: 1 }}
         >
           {certList.map((cert, index) => (
@@ -213,6 +213,31 @@ function Certifications() {
               </Tilt>
             </div>
           ))}
+        </div>
+
+        <div
+          className={`text-center mb-10`}
+          style={{ position: "relative", zIndex: 1 }}
+        >
+          <img
+            src={credlylogo}
+            // style={{ height: "70px" }}
+            className={`mx-auto ${isSmallScreen ? "h-17" : "h-19"}`}
+          />
+          <a
+            href="https://www.credly.com/users/muhamad-ashraff-othman/badges"
+            target="_blank"
+          >
+            <Button
+              size="xs"
+              ripple={true}
+              style={{ backgroundColor: "#FC0E49" }}
+              variant="filled"
+            >
+              View my badges on Credly&nbsp;{" "}
+              <i style={{ fontSize: "14px" }} className="fa fa-external-link" />
+            </Button>
+          </a>
         </div>
       </div>
     </>

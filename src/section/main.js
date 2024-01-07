@@ -5,7 +5,9 @@ import AboutMe from "./content/about-me";
 import Skills from "./content/skills";
 import Projects from "./content/projects";
 import Certifications from "./content/certifications";
+import ContactMe from "./content/contact-me";
 import "./main.css";
+import Footer from "./content/footer";
 
 export function Main() {
   return (
@@ -30,6 +32,12 @@ export function Main() {
       </section>
       <section>
         <Certifications />
+      </section>
+      <section className="contactmeSection">
+        <ContactMe />
+      </section>
+      <section className="footerSection">
+        <Footer />
       </section>
     </div>
   );

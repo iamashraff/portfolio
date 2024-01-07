@@ -30,3 +30,15 @@
   position: relative; /* Ensures the main content stays in the document flow */
   z-index: 1; /* Sets the stacking order to be below the header */
 }
+
+.contactmeSection {
+  /* Adjust the margin as needed */
+  position: relative; /* Ensures the main content stays in the document flow */
+  z-index: 1; /* Sets the stacking order to be below the header */
+}
+
+.footerSection {
+  /* Adjust the margin as needed */
+  position: relative; /* Ensures the main content stays in the document flow */
+  z-index: 1; /* Sets the stacking order to be below the header */
+}
