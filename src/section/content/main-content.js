@@ -6,6 +6,7 @@ import {
   Avatar,
   avatar,
   IconButton,
+  Tooltip,
 } from "@material-tailwind/react";
 import scroll from "./../../media/scroll_lottie.json";
 import "./main-content.css";
@@ -27,21 +28,17 @@ function MainContent() {
       <div className="context">
         <div class="relative z-10 flex flex-col items-center justify-center">
           <div class="avatarimg flex flex-col items-center justify-center">
-            <Tilt
-              glareEnable={true}
-              glareMaxOpacity={0.9}
-              glareColor="lightblue"
-              glarePosition="all"
-            >
-              <img
-                className={`mb-5 ${
-                  isSmallScreen
-                    ? "animate__animated animate__pulse h-40 w-40"
-                    : "animate__animated animate__fadeIn  h-60 w-60"
-                }   rounded-full object-cover object-center shadow-xl`}
-                src={myavatar}
-                alt="nature image"
-              />
+            <Tilt>
+              <Tooltip content="Hello there :)" placement="top">
+                <img
+                  className={`mb-5 ${
+                    isSmallScreen
+                      ? "animate__animated animate__pulse h-40 w-40"
+                      : "animate__animated animate__fadeIn  h-60 w-60"
+                  }   rounded-full object-cover object-center shadow-xl`}
+                  src={myavatar}
+                />
+              </Tooltip>
             </Tilt>
 
             <Typography
@@ -75,35 +72,39 @@ function MainContent() {
                 href="https://www.linkedin.com/in/muhamad-ashraff-a50a1717b/"
                 target="_blank"
               >
-                <IconButton
-                  variant="outlined"
-                  className="rounded-full"
-                  size="lg"
-                  color="white"
-                >
-                  <i
-                    style={{ fontSize: "25px", color: "white" }}
-                    class="fa fa-linkedin-square"
-                    aria-hidden="true"
-                  ></i>
-                </IconButton>
+                <Tooltip content="LinkedIn" placement="bottom">
+                  <IconButton
+                    variant="outlined"
+                    className="rounded-full"
+                    size="lg"
+                    color="white"
+                  >
+                    <i
+                      style={{ fontSize: "25px", color: "white" }}
+                      class="fa fa-linkedin-square"
+                      aria-hidden="true"
+                    ></i>
+                  </IconButton>
+                </Tooltip>
               </a>
             </div>
 
             <div>
               <a href="https://github.com/iamashraff" target="_blank">
-                <IconButton
-                  variant="outlined"
-                  className="rounded-full"
-                  size="lg"
-                  color="white"
-                >
-                  <i
-                    style={{ fontSize: "25px", color: "white" }}
-                    class="fa fa-github"
-                    aria-hidden="true"
-                  ></i>
-                </IconButton>
+                <Tooltip content="GitHub" placement="bottom">
+                  <IconButton
+                    variant="outlined"
+                    className="rounded-full"
+                    size="lg"
+                    color="white"
+                  >
+                    <i
+                      style={{ fontSize: "25px", color: "white" }}
+                      class="fa fa-github"
+                      aria-hidden="true"
+                    ></i>
+                  </IconButton>
+                </Tooltip>
               </a>
             </div>
           </div>

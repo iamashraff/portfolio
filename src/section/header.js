@@ -53,9 +53,13 @@ function Header() {
       <nav
         // style={{ backgroundColor: "rgba(245, 245, 245, 0.5)" }}
         style={{
-          backgroundColor: "rgba(1, 1, 1, 0.86)",
+          // backgroundColor: "rgba(1, 1, 1, 0.86)",
+          backgroundColor:
+            scrollPosition >= 100
+              ? "rgba(1, 1, 1, 0.9)"
+              : "rgba(37, 37, 37, 0)",
         }}
-        className="flex items-center justify-between flex-wrap p-3"
+        className={`flex items-center justify-between flex-wrap p-3`}
       >
         <div className="animate__animated animate__fadeInDown flex items-center flex-shrink-0 text-white ml-10 mr-10">
           <Typography

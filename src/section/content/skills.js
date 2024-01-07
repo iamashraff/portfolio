@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { Typography } from "@material-tailwind/react";
+import { Typography, Button } from "@material-tailwind/react";
 import "./skills.css";
 import Tilt from "react-parallax-tilt";
 import reactlogo from "./../../media/react_logo.png";
@@ -53,8 +53,9 @@ function Skills() {
       <div
         class={`bg-stars`}
         style={{
-          minHeight: `${isSmallScreen ? "calc(100vh + 150px)" : "calc(100vh)"}`,
+          minHeight: `${isSmallScreen ? "calc(130vh)" : "calc(90vh)"}`,
         }}
+        // style={{ height: "90vh" }}
       >
         <div class="stars">
           <div class="star"></div>
@@ -102,23 +103,34 @@ function Skills() {
                   isLargeScreen && "w-1/5"
                 } p-4 text-center flex flex-col items-center`}
               >
-                <Tilt
-                  glareEnable={true}
-                  glareMaxOpacity={0.8}
-                  glareColor="#ffffff"
-                  glarePosition="bottom"
-                  glareBorderRadius="20px"
-                >
-                  <img
-                    src={skill.image}
-                    // style={{ height: "70px" }}
-                    className={`mx-auto mb-2 ${
-                      isSmallScreen ? "h-15" : "h-21"
-                    }`}
-                    alt={skill.title}
-                  />
+                <Tilt>
+                  {isSmallScreen ? (
+                    <>
+                      <img
+                        src={skill.image}
+                        // style={{ height: "70px" }}
+                        className={`mx-auto mb-2 ${
+                          isSmallScreen ? "h-15" : "h-21"
+                        }`}
+                        alt={skill.title}
+                      />
 
-                  <p className="flex-grow">{skill.title}</p>
+                      <p className="flex-grow">{skill.title}</p>
+                    </>
+                  ) : (
+                    <Button variant="text" color="white">
+                      <img
+                        src={skill.image}
+                        // style={{ height: "70px" }}
+                        className={`mx-auto mb-2 ${
+                          isSmallScreen ? "h-15" : "h-21"
+                        }`}
+                        alt={skill.title}
+                      />
+
+                      <p className="flex-grow">{skill.title}</p>
+                    </Button>
+                  )}
                 </Tilt>
               </div>
             ))}

@@ -139,9 +139,7 @@ function Projects() {
           </Typography>
         </div>
 
-        <div
-          className={`flex flex-wrap gap-5  items-center justify-center mb-30`}
-        >
+        <div className={`flex flex-wrap  items-center justify-center mb-30`}>
           {listProjects.map((project, index) => (
             <ProjectsCard data={project} />
           ))}

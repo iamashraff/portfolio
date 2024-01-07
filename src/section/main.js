@@ -12,20 +12,20 @@ export function Main() {
     <div className="mainContainer">
       <section
         style={{ position: "sticky", top: 0, zIndex: 1000 }}
-        className="shadow-md headerSection"
+        className=" headerSection"
       >
         <Header />
       </section>
-      <section className="mainContentSection">
+      <section className="mainContentSection" style={{ marginTop: "-73px" }}>
         <MainContent />
       </section>
-      <section>
+      <section className="aboutmeSection">
         <AboutMe />
       </section>
-      <section>
+      <section className="skillsSection">
         <Skills />
       </section>
-      <section>
+      <section className="projectsSection">
         <Projects />
       </section>
       <section>

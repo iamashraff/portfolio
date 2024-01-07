@@ -12,3 +12,21 @@
   position: relative; /* Ensures the main content stays in the document flow */
   z-index: 1; /* Sets the stacking order to be below the header */
 }
+
+.aboutmeSection {
+  /* Adjust the margin as needed */
+  position: relative; /* Ensures the main content stays in the document flow */
+  z-index: 1; /* Sets the stacking order to be below the header */
+}
+
+.skillsSection {
+  /* Adjust the margin as needed */
+  position: relative; /* Ensures the main content stays in the document flow */
+  z-index: 1; /* Sets the stacking order to be below the header */
+}
+
+.projectsSection {
+  /* Adjust the margin as needed */
+  position: relative; /* Ensures the main content stays in the document flow */
+  z-index: 1; /* Sets the stacking order to be below the header */
+}

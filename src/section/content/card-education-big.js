@@ -29,7 +29,17 @@ function CardEducationBig() {
         </CardHeader>
         <CardBody className="flex items-center justify-center">
           <div className="text-center">
-            <img src={unikllogo} alt="card-image" className="h-25 mx-auto" />
+            <Tooltip content="www.unikl.edu.my">
+              <a href="https://www.unikl.edu.my/" target="_blank">
+                <Button variant="text" color="white">
+                  <img
+                    src={unikllogo}
+                    alt="card-image"
+                    className="h-25 mx-auto"
+                  />
+                </Button>
+              </a>
+            </Tooltip>
             <Typography
               variant="h5"
               color="blue-gray"

@@ -40,7 +40,7 @@ export function ProjectsCard(data) {
     //   }
     //   placement="bottom"
     // >
-    <Card className="max-w-[24rem] overflow-hidden transition-transform transform-gpu ml-3 mr-3">
+    <Card className="max-w-[24rem] overflow-hidden transition-transform transform-gpu ml-3 mr-3 mb-7">
       <CardHeader
         floated={false}
         shadow={false}
@@ -83,16 +83,20 @@ export function ProjectsCard(data) {
         ))}
 
         <div style={{ marginLeft: "auto" }}>
-          <Button size="sm" variant="filled">
+          <Button size="sm" variant="text">
             <Typography
-              style={{ fontFamily: "Poppins" }}
+              style={{
+                fontFamily: "Poppins",
+                fontSize: "14px",
+                fontWeight: "bold",
+              }}
               as="a"
               href={data.data.link}
               target="_blank"
               rel="noopener noreferrer"
             >
-              <i style={{ fontSize: "18px" }} className="fa fa-github" />
-              &nbsp;View
+              View&nbsp;
+              <i style={{ fontSize: "14px" }} className="fa fa-external-link" />
             </Typography>
           </Button>
         </div>
