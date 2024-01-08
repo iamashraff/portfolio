@@ -21,9 +21,9 @@ function ContactMe() {
 
   return (
     <>
-      <div class="relative flex flex-col items-center justify-center bg-white dark:bg-black transition-bg">
+      <div class="bg-royal relative flex flex-col items-center justify-center dark:bg-black transition-bg">
         <div class="absolute inset-0 overflow-hidden">
-          <div class="jumbo absolute -inset-[10px] opacity-50"></div>
+          <div class="  absolute -inset-[10px] opacity-50"></div>
         </div>
         <div class="relative flex flex-col items-center text-5xl font-bold transition-colors">
           <Typography
@@ -91,14 +91,15 @@ function ContactMe() {
                   </div>
 
                   <div className="mt-5">
-                    <button
-                      class="align-middle select-none font-sans font-bold text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-lg bg-gray-900 text-white shadow-md shadow-gray-900/10 hover:shadow-lg hover:shadow-gray-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none block w-full"
-                      type="button"
+                    <Button
+                      size="xs"
+                      ripple={true}
                       style={{ backgroundColor: "#FC0E49" }}
-                      data-ripple-light="true"
+                      variant="filled"
+                      fullWidth
                     >
                       Submit
-                    </button>
+                    </Button>
                   </div>
                 </div>
               </Typography>

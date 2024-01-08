@@ -9,6 +9,12 @@ function Header() {
 
   const { open, setOpen } = React.useContext(DrawerContext);
 
+  const { screenWidth, setScreenWidth } = React.useContext(DrawerContext);
+
+  const isSmallScreen = screenWidth < 560;
+  const isMediumScreen = screenWidth >= 560 && screenWidth < 850;
+  const isLargeScreen = screenWidth >= 850;
+
   const fontStyle = {
     fontFamily: "Poppins",
     fontWeight: "bold",
@@ -28,7 +34,7 @@ function Header() {
   }, []);
 
   const handleScroll = () => {
-    console.log(window.scrollY);
+    // console.log(window.scrollY);
     setScrollPosition(window.scrollY);
     if (window.scrollY > 0) {
       setScrolling(true);
@@ -44,8 +50,21 @@ function Header() {
     };
   }, []);
 
+  React.useEffect(() => {
+    console.log(scrollPosition);
+  }, [scrollPosition]);
+
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+  const scrollToAnchor = (anchor) => {
+    const targetElement = document.getElementById(anchor);
+    if (targetElement) {
+      targetElement.scrollIntoView({
+        behavior: "smooth",
+      });
+    }
   };
 
   return (
@@ -61,7 +80,11 @@ function Header() {
         }}
         className={`flex items-center justify-between flex-wrap p-3`}
       >
-        <div className="animate__animated animate__fadeInDown flex items-center flex-shrink-0 text-white ml-10 mr-10">
+        <div
+          className={`animate__animated animate__fadeInDown flex items-center flex-shrink-0 text-white ${
+            isLargeScreen ? "ml-15" : "ml-4"
+          } mr-10`}
+        >
           <Typography
             // style={{ color: "black", fontFamily: "Satisfy", fontSize: "30px" }}
             style={{
@@ -79,7 +102,7 @@ function Header() {
             onClick={() => {
               setOpen(true);
             }}
-            className="flex items-center px-3 py-2 border rounded text-white border-white-400 hover:text-white hover:border-white"
+            className="animate__animated animate__fadeInDown flex items-center px-3 py-2 border rounded text-white border-white-400 hover:text-white hover:border-white"
           >
             <svg
               className="fill-current h-3 w-3"
@@ -98,30 +121,36 @@ function Header() {
         >
           <div className="text-sm lg:flex-grow"></div>
           <div>
-            <Button variant="text">
+            <Button
+              onClick={() => scrollToAnchor("myeducation")}
+              variant="text"
+            >
               <Typography style={fontStyle}>My Education</Typography>
             </Button>
           </div>
           <div>
-            <Button variant="text">
+            <Button onClick={() => scrollToAnchor("myskills")} variant="text">
               <Typography style={fontStyle}>My Skills</Typography>
             </Button>
           </div>
 
           <div>
-            <Button variant="text">
+            <Button onClick={() => scrollToAnchor("myprojects")} variant="text">
               <Typography style={fontStyle}>My Projects</Typography>
             </Button>
           </div>
 
           <div>
-            <Button variant="text">
+            <Button
+              onClick={() => scrollToAnchor("mycertifications")}
+              variant="text"
+            >
               <Typography style={fontStyle}>My Certifications</Typography>
             </Button>
           </div>
 
           <div>
-            <Button variant="text">
+            <Button onClick={() => scrollToAnchor("contactme")} variant="text">
               <Typography style={fontStyle}>Contact Me</Typography>
             </Button>
           </div>

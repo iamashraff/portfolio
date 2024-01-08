@@ -6,31 +6,23 @@ function Footer() {
   return (
     <div
       style={{
-        backgroundColor: "#FFFFFF",
-        position: "relative",
+        backgroundColor: "#131313",
+        paddingBottom: "20px",
+        paddingTop: "20px",
       }}
+      className="text-center"
     >
-      <hr className="my-8 border-blue-gray-50 ml-20 mr-20" />
-      <div
-        class="relative flex  items-center justify-center mb-4"
-        style={{ height: "10px", fontSize: "15px" }}
-      >
-        <label style={{ ...fontStyle, color: "black" }}>Made with &nbsp;</label>
-        <label
-          className="animate__animated animate__heartBeat animate__infinite"
-          style={{ color: "#FC0E49" }}
-        >
-          ❤︎
-        </label>
-        <label style={{ ...fontStyle, color: "black" }}>
-          &nbsp; by Ashraff
-        </label>
-      </div>
-      <div class="relative flex  items-center justify-center mb-7">
-        <label style={{ ...fontStyle, color: "black", fontSize: "15px" }}>
-          © 2024. All Rights Reserved.
-        </label>
-      </div>
+      <label style={{ ...fontStyle, color: "white", fontSize: "15px" }}>
+        Made with &nbsp;
+      </label>
+      <label style={{ color: "#FC0E49" }}>❤︎</label>
+      <label style={{ ...fontStyle, color: "white", fontSize: "15px" }}>
+        &nbsp; by Ashraff
+      </label>
+      <br></br>
+      <label style={{ ...fontStyle, color: "white", fontSize: "15px" }}>
+        © 2024. All Rights Reserved.
+      </label>
     </div>
   );
 }
