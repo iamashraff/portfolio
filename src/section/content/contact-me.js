@@ -10,6 +10,7 @@ import {
 } from "@material-tailwind/react";
 import "./contact-me.css";
 import { DrawerContext } from "../../App";
+import { ContactModal } from "./contact-modal";
 const fontStyle = { fontFamily: "Poppins" };
 
 function ContactMe() {
@@ -91,15 +92,7 @@ function ContactMe() {
                   </div>
 
                   <div className="mt-5">
-                    <Button
-                      size="xs"
-                      ripple={true}
-                      style={{ backgroundColor: "#FC0E49" }}
-                      variant="filled"
-                      fullWidth
-                    >
-                      Submit
-                    </Button>
+                    <ContactModal />
                   </div>
                 </div>
               </Typography>
