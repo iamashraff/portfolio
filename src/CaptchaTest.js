@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import axios from "axios";
 import { Button, Input } from "@material-tailwind/react";
 import {
   loadCaptchaEnginge,
@@ -27,21 +28,23 @@ const CaptchaTest = () => {
   }, []);
 
   const handleSubmit = async (objPost) => {
+    console.log(objPost);
     try {
-      const response = await fetch("https://api.ashraff.me/contact_form/", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(objPost),
-      });
-      console.log(response);
+      const response = await axios.post(
+        "https://api.ashraff.me/contact_form/index.php",
+        objPost,
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
 
-      if (response.ok) {
+      console.log(response.data);
+
+      if (response.data.status === "success") {
         console.log("Form submitted successfully!");
         // You can perform any other actions upon successful submission
-      } else {
-        console.error("Error submitting form");
       }
     } catch (error) {
       console.error("Error:", error);
@@ -53,13 +56,13 @@ const CaptchaTest = () => {
 
     if (validateCaptcha(user_captcha) === true) {
       let objPost = {
-        name: { name },
-        email: { email },
-        phone: { phone },
-        message: { msg },
+        name: name,
+        email: email,
+        phone: phone,
+        message: msg,
       };
       await handleSubmit(objPost);
-      console.log(objPost);
+
       setCaptchaStatus(true);
       setCaptchaOpen(false);
       setName("");
