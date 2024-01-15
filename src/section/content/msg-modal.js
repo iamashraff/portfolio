@@ -5,38 +5,39 @@ import {
   DialogHeader,
   DialogBody,
   DialogFooter,
+  Typography,
 } from "@material-tailwind/react";
-import CaptchaTest from "../../CaptchaTest";
 import { ContactMeContext } from "./contact-me";
+import CaptchaTest from "../../CaptchaTest";
 const fontStyle = { fontFamily: "Poppins" };
 
-export function ContactModal() {
-  const { captchaOpen, setCaptchaOpen } = React.useContext(ContactMeContext);
+export function MsgModal() {
+  const { msgOpen, setMsgOpen, msgError } = React.useContext(ContactMeContext);
 
   const handleOpen = () => {
-    setCaptchaOpen(!captchaOpen);
+    setMsgOpen(!msgOpen);
   };
 
   return (
     <>
-      <Dialog size="xs" open={captchaOpen} handler={handleOpen}>
-        <DialogHeader style={{ fontStyle }}>Confirmation</DialogHeader>
+      <Dialog size="xs" open={msgOpen} handler={handleOpen}>
+        <DialogHeader style={{ fontStyle }}>{msgError.status}</DialogHeader>
         <DialogBody>
-          <CaptchaTest />
+          <Typography style={{ fontStyle }}>{msgError.msg}</Typography>
         </DialogBody>
-        {/* <DialogFooter>
-          <Button
+        <DialogFooter>
+          {/* <Button
             className="mr-2"
             variant="gradient"
             color="red"
             onClick={handleOpen}
           >
             <span>Cancel</span>
-          </Button>
+          </Button> */}
           <Button variant="gradient" onClick={handleOpen}>
-            <span>Confirm</span>
+            <span>OK</span>
           </Button>
-        </DialogFooter> */}
+        </DialogFooter>
       </Dialog>
     </>
   );

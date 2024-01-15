@@ -10,6 +10,8 @@
     "@testing-library/user-event": "^13.5.0",
     "@tsparticles/react": "^3.0.0",
     "@tsparticles/slim": "^3.0.3",
+    "assert": "^2.1.0",
+    "buffer": "^6.0.3",
     "lottie-react": "^2.4.0",
     "lottie-web": "^5.12.2",
     "modern-react-captcha": "^3.0.0",
