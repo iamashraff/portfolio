@@ -9,6 +9,7 @@ import Certifications from "./content/certifications";
 import ContactMe from "./content/contact-me";
 import "./main.css";
 import Footer from "./content/footer";
+import MyAchievement from "./content/my-achievement";
 
 export function Main() {
   return (
@@ -37,6 +38,9 @@ export function Main() {
       </section>
       <section id="mycertifications">
         <Certifications />
+      </section>
+      <section id="myachievements" className="achievementSection">
+        <MyAchievement />
       </section>
       <section id="contactme" className="contactmeSection">
         <ContactMe />
