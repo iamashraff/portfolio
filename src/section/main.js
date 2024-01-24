@@ -10,45 +10,46 @@ import ContactMe from "./content/contact-me";
 import "./main.css";
 import Footer from "./content/footer";
 import MyAchievement from "./content/my-achievement";
-
 export function Main() {
   return (
-    <div className="mainContainer">
-      <section
-        style={{ position: "sticky", top: 0, zIndex: 1000 }}
-        className=" headerSection"
-      >
-        <Header />
-      </section>
-      <section
-        id="home"
-        className="mainContentSection"
-        style={{ marginTop: "-73px" }}
-      >
-        <MainContent />
-      </section>
-      <section id="myeducation" className="aboutmeSection">
-        <AboutMe />
-      </section>
-      <section id="myskills" className="skillsSection">
-        <Skills />
-      </section>
-      <section id="myprojects" className="projectsSection">
-        <Projects />
-      </section>
-      <section id="mycertifications">
-        <Certifications />
-      </section>
-      <section id="myachievements" className="achievementSection">
+    <>
+      <div className="mainContainer ">
+        <section
+          style={{ position: "sticky", top: 0, zIndex: 1000 }}
+          className=" headerSection"
+        >
+          <Header />
+        </section>
+        <section
+          id="home"
+          className="mainContentSection"
+          style={{ marginTop: "-73px" }}
+        >
+          <MainContent />
+        </section>
+        <section id="myeducation" className="aboutmeSection">
+          <AboutMe />
+        </section>
+        <section id="myskills" className="skillsSection">
+          <Skills />
+        </section>
+        <section id="myprojects" className="projectsSection">
+          <Projects />
+        </section>
+        <section id="mycertifications">
+          <Certifications />
+        </section>
+        {/* <section id="myachievements" className="achievementSection">
         <MyAchievement />
-      </section>
-      <section id="contactme" className="contactmeSection">
-        <ContactMe />
-      </section>
-      <section className="footerSection">
-        <Footer />
-      </section>
-    </div>
+      </section> */}
+        <section id="contactme" className="contactmeSection">
+          <ContactMe />
+        </section>
+        <section className="footerSection">
+          <Footer />
+        </section>
+      </div>
+    </>
   );
 }
 

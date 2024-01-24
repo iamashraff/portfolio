@@ -120,6 +120,14 @@ function Header() {
           }`}
         >
           <div className="text-sm lg:flex-grow"></div>
+          {scrollPosition >= 100 && (
+            <div>
+              <Button onClick={() => scrollToAnchor("home")} variant="text">
+                <Typography style={fontStyle}>Home</Typography>
+              </Button>
+            </div>
+          )}
+
           <div>
             <Button
               onClick={() => scrollToAnchor("myeducation")}
@@ -159,10 +167,10 @@ function Header() {
 
       <button
         onClick={scrollToTop}
-        // style={{ backgroundColor: "yellow" }}
+        style={{ backgroundColor: "#FC0E49" }}
         className={`animate__animated ${
           scrollPosition > 1 ? "animate__fadeInUpBig" : "animate__fadeOutDown"
-        } fixed bottom-10 right-10 bg-blue-800 text-white py-2 px-4 rounded-full cursor-pointer `}
+        } fixed bottom-10 right-10  text-white py-2 px-4 rounded-full cursor-pointer `}
       >
         <i class="fa fa-arrow-up" aria-hidden="true"></i>
       </button>
